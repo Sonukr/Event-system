@@ -86,10 +86,13 @@ background-color: #33bfb0;
   height: auto;
 }
 .flexslider .slides>li>h2{
+  width: 900px;
   z-index: 110;
-  color:red;
-  font-size:32px;
+  color:#fff;
+  text-shadow: 1px 0px 1px #333;
+  font:52px 'klavikamedium_italic';
   margin-top:-50%;
+  margin-left: 20%;
 }
 .flexslider .slides img {
   background-size: cover;
