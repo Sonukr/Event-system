@@ -1,0 +1,40 @@
+ <div class="container" id="content" > 
+        <!-- Modal For create event-->
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Login in to your account</h4>
+              </div>
+              <div class="modal-body">
+              
+              <form ua-login>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" name="login" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" name="password" placeholder="Password">
+                </div> <hr>
+                <button type="submit" class="btn btn-success">Login</button>
+                <p ng-show="loading"><i class="fa fa-spinner spin"></i></p>
+                <p ng-show="error">{{ error.message }}</p>
+              </form>
+<!--              <p><a href="#/reset-password">Reset password</a></p>-->
+         </div>
+            </div>
+          </div>
+        </div>
+   </div>
+   
+  
+<form ua-login>
+	<input name="login" placeholder="Username"><br>
+	<input name="password" placeholder="Password" type="password"><br>
+	<p><button type="submit">Log in</button> or <a href="" ua-oauth-link="google">Log in with Google</a></p>
+	
+	<p ng-show="loading"><img src="https://app.userapp.io/img/ajax-loader-transparent.gif"></p>
+	<p ng-show="error">{{ error.message }}</p>
+</form>

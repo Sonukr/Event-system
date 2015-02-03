@@ -1,0 +1,39 @@
+ <div class="container" id="content" > 
+        <!-- Modal For create event-->
+        <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create A New Account</h4>
+              </div>
+              <div class="modal-body">
+                <form ua-signup ng-show="!verificationEmailSent">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Your First Name" name="first_name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Last Name</label>
+                    <input type="text" class="form-control"  placeholder="Enter Your Last Name" name="last_name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Your E-mail</label>
+                    <input type="email" class="form-control"  placeholder="Enter Your E-mail" name="login" ua-is-email>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Eneter Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" name="password">
+                  </div> <hr>
+                  <button type="submit" class="btn btn-success">Sign Up</button>
+                </form>
+         </div>
+            </div>
+          </div>
+        </div>
+   </div>
+   
+   
+
+
+  
