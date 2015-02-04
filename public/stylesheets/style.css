@@ -200,8 +200,8 @@ font-family: 'robotolight';
   height: 150px;
 }
 .footer{
-  margin-left: 77%;
   margin-top: 50px;
+  margin-right: 10px;
   font-family: 'robotolight';
   font-size: 17px;
 }
