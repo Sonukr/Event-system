@@ -35,6 +35,10 @@ $ node app.js
 ```
 After that Goto Localhost:3000 in your browser.
 
-###### After the Successfull installing and running, Click on "Sign Up" And create a acoount.
+###### After the Successfull installing and running, Click on "Log In" . Enter Following credentials.
+```sh
+User name: admin@event.com
+Password:  eventsquare
+```
     
-###### After that login in your account (by Default it will redirect you to logged user home page after signup ) Create a event and filll the form and save it.
+###### After login in your account (by Default it will redirect you to logged user home page after signup ) Create a event and filll the form and save it.
