@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 
 //importing mongo db event schema , in this app event is the schema for events collection
-var Event = require('./db/Event');
+var Event = require('./db/EventModel');
 
 
 // dbname - eventdb
