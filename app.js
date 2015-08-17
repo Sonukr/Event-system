@@ -5,8 +5,8 @@ var path = require('path');
 var mongoose = require('mongoose');
 var fs = require('fs');
 
-//importing mongo db event schema , in this app event is the schema for events collection
-var Event = require('./db/EventModel');
+//importing mongo db event schema , in this app event is the schema for events collection and Event Model is the filename
+var Eventdata = require('./db/EventModel');
 
 
 // dbname - eventdb
@@ -32,7 +32,7 @@ if ('development' == app.get('env')) {
 
 // Get all events  (created api to provide data from database to user through http req ,res)
 app.get('/api/events', function(req, res) {                       //send the req to events collection
-  Event.find({}, function(err, docs) {                         // find the event data from events coll
+  Eventdata.find({}, function(err, docs) {                         // find the event data from events coll
     if(!err) res.json(200, docs);                                 // if no err , send it as JSON
     else res.send(500);
   });
@@ -41,7 +41,7 @@ app.get('/api/events', function(req, res) {                       //send the req
 
 // Get event by user email
 app.get('/api/events/user/:email' , function(req, res) {
-  Event.find({ email: req.params.email }, function(err, docs) {
+  Eventdata.find({ email: req.params.email }, function(err, docs) {
     if(!err) res.json(200, docs);
     else res.send(500);
   });
@@ -50,7 +50,7 @@ app.get('/api/events/user/:email' , function(req, res) {
 
 // Get event by id
 app.get('/api/events/:id', function(req, res) {
-  Event.findById(req.params.id, function(err, doc) {
+  Eventdata.findById(req.params.id, function(err, doc) {
     if(!err) res.json(200, doc);
     else res.send(500);
   });
@@ -77,7 +77,7 @@ app.post('/api/events', function(req, res) {
   });
   
   // create event model 
-  var event = new Event(eventData);
+  var event = new Eventdata(eventData);
   
   // save to database
   event.save(function(err) {
@@ -88,8 +88,8 @@ app.post('/api/events', function(req, res) {
 
 // Delete an event
 app.del('/api/events/:id', function(req, res) {
-  
-  Event.findByIdAndRemove(req.params.id, function(err, doc) {
+
+  Eventdata.findByIdAndRemove(req.params.id, function(err, doc) {
     
     // delete the event image
     fs.unlink('./public' + doc.imageurl, function(err) {
