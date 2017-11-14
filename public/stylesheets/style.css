@@ -96,21 +96,27 @@ img{
   outline: none;
 }
 .events{
-  margin-top: 10%;
+  margin-top: 55px;
   /*max-height: 90vh;
   overflow: scroll;*/
-  /*background-color: #fff;*/
+  background-color: #fff;
 }
 .searchbar{
-
+  background: red;
   position: relative;
   z-index: 150;
+  padding: 12px;
+}
+.details{
+  min-height: 82vh;
+  max-height: 82vh;
+  overflow: scroll;
 }
 .event-detail{
   margin-top: 5px;
 }
 .sorting{
-  margin-bottom: 60px;
+
 }
 .sorting li{
   list-style: none;
