@@ -47,7 +47,7 @@ body{
 .navbar-default .navbar-nav>li>a{
   color:#fff;
   font-size: 22px;
-  
+
 }
 .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:active{
@@ -65,42 +65,12 @@ body{
   border: none;
 }
 .btn-success.active, .btn-success.focus,
-.btn-success:active, .btn-success:focus, 
+.btn-success:active, .btn-success:focus,
 .btn-success:hover, .open>.dropdown-toggle.btn-success{
 background-color: #33bfb0;
   box-shadow: none;
 }
 
-.flexslider{
-  border: none;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  background-size: cover;
-  position: relative;
-  height:670px;
-  z-index: 100;
-  
-}
-.flexslider .slides li{
-  height: auto;
-}
-.flexslider .slides>li>h2{
-  width: 900px;
-  z-index: 110;
-  color:#fff;
-  text-shadow: 1px 0px 1px #333;
-  font:52px 'klavikamedium_italic';
-  margin-top:-50%;
-  margin-left: 20%;
-}
-.flexslider .slides img {
-  background-size: cover;
-  width: 100%;
-  height: auto;
-  display: block;
-  
-}
 
 img{
   height: auto;
@@ -125,16 +95,28 @@ img{
   height: 90px;
   outline: none;
 }
+.events{
+  margin-top: 55px;
+  /*max-height: 90vh;
+  overflow: scroll;*/
+  background-color: #fff;
+}
 .searchbar{
-  margin-top: -5%;
+  background: red;
   position: relative;
   z-index: 150;
+  padding: 12px;
+}
+.details{
+  min-height: 82vh;
+  max-height: 82vh;
+  overflow: scroll;
 }
 .event-detail{
   margin-top: 5px;
 }
 .sorting{
-  margin-bottom: 60px;
+
 }
 .sorting li{
   list-style: none;
@@ -145,7 +127,7 @@ img{
 }
 .caption{
   background:#fff ;
-  box-shadow: 1px 1px 3px #1c1b1b; 
+  box-shadow: 1px 1px 3px #1c1b1b;
 }
 
 .thumbnail{
@@ -154,8 +136,8 @@ img{
 }
 .thumbnail a>img, .thumbnail>img,
 .thumbnail a>img, .thumbnail>img{
-  
-  height: 265px; !important
+
+  height: 180px; !important
 /*  width: 370px; !important*/
 }
 .caption h3{
@@ -170,7 +152,6 @@ font-family: 'robotolight';
   color:#676767;
 }
 .btn-danger{
-  margin-top: -40px;
   margin-right: 15px;
   background:#f04c6b;
   box-shadow: .2px .2px .1px rgba(0,0,0,0.4) ;

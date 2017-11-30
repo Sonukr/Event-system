@@ -62,27 +62,53 @@ app.get('/api/events/:id', function(req, res) {
 app.post('/api/events', function(req, res) {
   //console.log(req.body);
   var eventData = req.body;
-  
+
   // new filename for uploaded image
-  var newFileName = req.body.name.replace(/\s/g, '') 
-                    + '_' + req.body.location.replace(/\s/g, '');  
-  
+  var newFileName = req.body.name.replace(/\s/g, '')
+                    + '_' + req.body.location.replace(/\s/g, '');
+
   // add the imageurl to event object
   eventData.imageurl = '/uploads/' + newFileName;
-  
+
   // move the image from /tmp to /uploads
-  fs.readFile(req.files.eventimage.path, function (err, data) {
-    var newPath = __dirname + "/public/uploads/" + newFileName;
-    fs.writeFile(newPath, data, function (err) {});
-  });
-  
-  // create event model 
+  console.log(req.files)
+  if(req.files){
+    fs.readFile(req.files.eventimage.path, function (err, data) {
+      var newPath = __dirname + "/public/uploads/" + newFileName;
+      fs.writeFile(newPath, data, function (err) {});
+    });
+  }
+  // create event model
   var event = new Eventdata(eventData);
-  
+
   // save to database
   event.save(function(err) {
-    if(!err) res.redirect("/");
+    if(!err){
+       res.redirect('/');
+       res.send({success:true});
+    }
     else res.send(500);
+
+  });
+});
+
+//update an event
+app.put('/api/events/:id',function(req,res){
+  var IdToUpdate = mongoose.Types.ObjectId(req.params.id);
+  Eventdata.findById(IdToUpdate, function(err, event){
+    if(err){
+      res.send(err)
+    }
+    event.name = req.body.name;
+    event.location = req.body.location;
+    event.save(function(err) {
+        if (err){
+          res.send(err);
+        }
+        else{
+          res.redirect(200,'/');
+        }
+    });
   });
 });
 
@@ -90,12 +116,15 @@ app.post('/api/events', function(req, res) {
 app.del('/api/events/:id', function(req, res) {
 
   Eventdata.findByIdAndRemove(req.params.id, function(err, doc) {
-    
+
     // delete the event image
-    fs.unlink('./public' + doc.imageurl, function(err) {
-      res.end();
-    });
-        
+    if(doc){
+      fs.unlink('./public' + doc.imageurl, function(err) {
+        res.end();
+      });
+    }
+
+
   });
 });
 
